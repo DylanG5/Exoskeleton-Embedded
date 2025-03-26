@@ -1,0 +1,10 @@
+Source: exoskeleton
+Section: devel
+Priority: optional
+Maintainer: Dylan Garner <dylan.garner@gmail.com>
+Build-Depends: build-essential
+
+Package: exoskeleton
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: McMaster Exoskeleton Embedded Software Package

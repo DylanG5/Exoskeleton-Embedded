@@ -1,0 +1,12 @@
+[Unit]
+Description=Exoskeleton Control Service
+
+[Service]
+ExecStart=/usr/bin/exoskeleton
+Restart=always
+User=root
+StandardOutput=append:/var/log/exoskeleton.log
+StandardError=append:/var/log/exoskeleton.log
+
+[Install]
+WantedBy=multi-user.target

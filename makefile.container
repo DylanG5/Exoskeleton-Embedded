@@ -1,0 +1,23 @@
+DOCKER_IMAGE = deb-builder
+CONTAINER_NAME = deb-builder
+BUILD_DIR = build
+INSTALL_DIR = debian/tmp/usr/bin
+
+# Contains make targets for building and entering docker containers
+
+docker-build:
+	docker build -t $(DOCKER_IMAGE) .
+
+docker-run: docker-stop
+	docker run -dit --name $(CONTAINER_NAME) -v $(PWD):/workspace -w /workspace $(DOCKER_IMAGE)
+
+enter:
+	docker exec -it $(CONTAINER_NAME) /bin/bash
+
+docker-stop:
+	docker stop $(CONTAINER_NAME) 2>/dev/null || true
+	docker rm -f $(CONTAINER_NAME) 2>/dev/null || true
+
+full: docker-run enter
+
+.PHONY: docker-build docker-run enter docker-stop full

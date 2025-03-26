@@ -30,3 +30,25 @@
 *.exe
 *.out
 *.app
+
+/build/
+/CMakeCache.txt
+/CMakeFiles/
+/cmake_install.cmake
+
+# Debhelper generated files
+/debian/*.debhelper.log
+/debian/files
+/debian/tmp/
+/debian/debhelper-build-stamp
+/debian/*.substvars
+/debian/*.deb
+/debian/*.changes
+/debian/.debhelper/
+/debian/*.debhelper
+
+debian/exoskeleton/
+
+*.deb
+
+
